@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class InventoryItem {
++ toString() : String
++ generateSerialNumber() : String
+}
+class InventoryController {
+Type_Date : TextField
+remove : Button
+add_item : Button
+load : Button
+save : Button
++ initialize() : void
++ edit(): void
++ addAction(): void
++ deleteAction(): void
+- save():void
+- load():void
++ sortByName() : void
++ sortBySerialNumber() : void
++ sortByValue() : void
+- saveTSV():void
+- saveHTML():void
+- saveJSON():void
+- loadTSV():void
+- loadJSON():void
+- loadHTML():void
+
+}
+class InventoryLauncher {
++ main():void
++ start():void
+}
+javafx.Application <|-- InventoryLauncher
+InventoryItem - InventoryController
+
+@enduml

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" text="Inventory Items" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.InventoryController">
+    <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="0.0">
+            <children>
+                <Button layoutX="717.0" layoutY="539.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#save" prefHeight="22.0" prefWidth="45.0" text="save" />
+                <Button layoutX="661.0" layoutY="537.0" mnemonicParsing="false" onMouseClicked="#load" prefHeight="24.0" prefWidth="41.0" text="load" />
+                <ListView fx:id="inventoryList" layoutX="21.0" layoutY="41.0" onMouseClicked="#click" prefHeight="488.0" prefWidth="760.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></ListView>
+                <Button layoutX="583.0" layoutY="537.0" mnemonicParsing="false" onMouseClicked="#addAction" prefHeight="26.0" prefWidth="69.0" text="add item" />
+                <TextField fx:id="Type_SerialNumber" layoutX="318.0" layoutY="537.0" prefHeight="26.0" prefWidth="104.0" promptText="Serial Number" />
+                <TextField fx:id="Type_Value" layoutX="186.0" layoutY="536.0" prefHeight="26.0" prefWidth="122.0" promptText="Value" />
+                <Button layoutX="54.0" layoutY="536.0" mnemonicParsing="false" onMouseClicked="#deleteAction" prefHeight="28.0" prefWidth="58.0" text="remove" />
+                <Button layoutX="762.0" layoutY="536.0" mnemonicParsing="false" onMouseClicked="#edit" text="edit" />
+            <GridPane layoutX="21.0" layoutY="15.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="761.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="itemValue" text="Value" GridPane.columnIndex="0"/>
+                   <Button mnemonicParsing="false" onMouseClicked="#sortByValue" text="Sort" GridPane.halignment="RIGHT" GridPane.columnIndex="1"/>
+                   <Button mnemonicParsing="false" onMouseClicked="#searchByValue" text="Search"  GridPane.halignment="CENTER" GridPane.columnIndex="2"/>
+                  <TextField fx:id="itemName" text="Name" GridPane.columnIndex="3" />
+                   <Button mnemonicParsing="false" onMouseClicked="#sortByName" text="Sort"  GridPane.halignment="RIGHT" GridPane.columnIndex="4"/>
+                   <Button mnemonicParsing="false" onMouseClicked="#searchByName" prefHeight="26.0" prefWidth="59.0" text="Search" GridPane.halignment="CENTER" GridPane.columnIndex="5" />
+                  <TextField text="Serial Number" GridPane.columnIndex="6" />
+                   <Button mnemonicParsing="false" onMouseClicked="#sortBySerialNumber" text="Sort" GridPane.halignment="RIGHT" GridPane.columnIndex="7" />
+                  <Button mnemonicParsing="false" text="Search"  GridPane.halignment="CENTER" GridPane.columnIndex="8"/>
+               </children>
+            </GridPane>
+            <GridPane gridLinesVisible="true" layoutX="275.0" layoutY="41.0" prefHeight="489.0" prefWidth="255.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </GridPane>
+            <TextField fx:id="Type_Name" layoutX="441.0" layoutY="537.0" prefHeight="26.0" prefWidth="123.0" promptText="Name" />
+            <ChoiceBox fx:id="cbox" layoutY="537.0" prefHeight="26.0" prefWidth="50.0" />
+            </children></AnchorPane>
+    </content>
+</TitledPane>
